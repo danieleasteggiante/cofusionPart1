@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <title>Ristorante Con Fusion</title>
+</head>
+
+<body>
+    <div id="container" class="ml-5" style="width:300px;">
+        <div id="back" style="width:300px; height:300px; background-image: url('img/uthappizza.png');">
+
+            <div id="resize" style="width:150px; height:300px; background-image: url('img/buffet.png'); border-right: 2px solid blanchedalmond">
+
+                <p id="info">
+
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+    <script>
+        $("#container").mouseover(function() {
+            let dimension = 0;
+            $("#back").on('mousedown', function() {
+                $('#resize').on('mousemove', function(event) {
+                    if (event.pageX < 335) {
+                        $(this).css('width', event.pageX - 35);
+                        dimension = event.pageX;
+                    }
+                }).on('mouseup', function() {
+                    $(this).unbind('mousemove');
+                }).mouseout(function() {
+                    $(this).unbind('mousemove');
+                });
+            })
+        });
+    </script>
+
+</body>
+
+</html>
