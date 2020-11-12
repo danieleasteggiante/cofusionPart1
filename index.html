@@ -8,10 +8,13 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Bootstrap CSS -->
+
+    <!-- build:css css/main.css -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <link href="css/styles.css" rel="stylesheet">
+    <!-- endbuild -->
 
     <title>Ristorante Con Fusion</title>
 </head>
@@ -31,8 +34,12 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact </a></li>
                 </ul>
                 <span class="navbar-text">
-                   <a data-toggle="modal" data-target="#loginModal">
+                  <!--  <a data-toggle="modal" data-target="#loginModal">
                        <span class="fa fa-sign-in"></span> Login
+                </a> -->
+
+                <a id="loginModalButton">
+                    <span class="fa fa-sign-in"></span> Login
                 </a>
                 </span>
             </div>
@@ -167,7 +174,9 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <a href="#reserve-table" class="btn btn-warning btn-sm btn-block" data-toggle="modal" data-target="#reserveTableModal">Reserve a table</a>
+                    <!-- <a href="#reserve-table" class="btn btn-warning btn-sm btn-block" data-toggle="modal" data-target="#reserveTableModal">Reserve a table</a> -->
+
+                    <a href="#reserve-table" id="reserveTableButton" class="btn btn-warning btn-sm btn-block">Reserve a table</a>
                 </div>
             </div>
         </div>
@@ -318,26 +327,13 @@
         </div>
     </footer>
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <!-- build:js js/main.js-->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
 
-    <script>
-        $(document).ready(function() {
-            $("#mycarousel").carousel({
-                interval: 2000
-            });
-            $("#carouselButton").click(function() {
-                if ($("#carouselButton").children('span').hasClass('fa-pause')) {
-                    $("#mycarousel").carousel('pause');
-                    $(this).children('span').removeClass('fa-pause').addClass('fa-play');
-                } else {
-                    $("#mycarousel").carousel('cycle');
-                    $(this).children('span').removeClass('fa-play').addClass('fa-pause');
-                }
-            })
-        })
-    </script>
 
 </body>
 
